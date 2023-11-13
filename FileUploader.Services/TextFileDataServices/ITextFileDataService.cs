@@ -10,5 +10,6 @@ namespace FileUploader.Services.TextFileDataServices
     public interface ITextFileDataService
     {
         Task<List<TextFileDataModel>> GetLastFileDataAsync();
+        Task<List<TextFileDataModel>> GetFileDataByFileIdAsync(int id);
     }
 }

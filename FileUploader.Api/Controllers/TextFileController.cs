@@ -52,17 +52,6 @@ namespace FileUploader.Api.Controllers
             }
         }
 
-        //[HttpGet("get-all")]
-        //public async Task<ActionResult<TableTextFileModel>> GetAll()
-        //{
-        //    try
-        //    {
-        //        return Ok(await _textFileServices.GetAllAsync());
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-        //    }
-        //}
+       
     }
 }

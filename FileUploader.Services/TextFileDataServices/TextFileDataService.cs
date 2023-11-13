@@ -21,6 +21,18 @@ namespace FileUploader.Services.TextFileDataServices
             _context = context;
             _mapper = mapper;
         }
+
+        public async Task<List<TextFileDataModel>> GetFileDataByFileIdAsync(int id)
+        {
+            var file = _context.TextFiles.Include(x => x.Data)
+                            .FirstOrDefault(x => x.Id == id);
+
+            if (file == null) { return new List<TextFileDataModel>(); }
+
+            var data = file?.Data;
+            return _mapper.Map<List<TextFileDataModel>>(data);
+        }
+
         public async Task<List<TextFileDataModel>> GetLastFileDataAsync()
         {
             var file = _context.TextFiles.OrderByDescending(x => x.Id)
